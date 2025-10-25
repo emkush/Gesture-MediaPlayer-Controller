@@ -1,6 +1,6 @@
-# ========================
-# Python and virtual envs
-# ========================
+# =======================================
+# 🧠 Python / Environment
+# =======================================
 __pycache__/
 *.pyc
 *.pyo
@@ -9,7 +9,7 @@ __pycache__/
 *.log
 *.tmp
 
-# Virtual environment
+# Virtual environments
 .venv/
 .venv310/
 env/
@@ -23,10 +23,11 @@ ENV/
 *.ipynb_save
 *.ipynb_checkpoint
 
-# ========================
-# Model files and checkpoints
-# ========================
+# =======================================
+# 🧠 Machine Learning / Models
+# =======================================
 models/
+checkpoints/
 *.h5
 *.tflite
 *.task
@@ -34,13 +35,16 @@ models/
 *.ckpt
 *.onnx
 *.weights
-checkpoints/
 
-# ========================
-# Data
-# ========================
+# TensorFlow / Keras artifacts
+events.out.tfevents.*
+
+# =======================================
+# 📦 Data / Datasets
+# =======================================
 data/
 datasets/
+captures/
 *.csv
 *.npy
 *.npz
@@ -56,9 +60,9 @@ datasets/
 *.bmp
 *.gif
 
-# ========================
-# IDE / Editor
-# ========================
+# =======================================
+# 💻 IDE / Editor Config
+# =======================================
 .vscode/
 .idea/
 *.swp
@@ -66,18 +70,9 @@ datasets/
 *.bak
 *.orig
 
-# ========================
-# MacOS / System
-# ========================
-.DS_Store
-.AppleDouble
-.LSOverride
-Thumbs.db
-Desktop.ini
-
-# ========================
-# Cache / build artifacts
-# ========================
+# =======================================
+# ⚙️ Build / Cache
+# =======================================
 build/
 dist/
 *.egg-info/
@@ -85,25 +80,48 @@ dist/
 *.manifest
 *.spec
 *.so
-__pycache__/
-*.cache
 .cache/
-*.pytest_cache/
+__pycache__/
 pytest_cache/
+*.pytest_cache/
 
-# ========================
-# Other generated files
-# ========================
+# =======================================
+# 🍎 macOS System Files
+# =======================================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of volumes
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# =======================================
+# 🧰 Miscellaneous
+# =======================================
 *.out
 *.log
 *.json
 *.yaml~
 *.bak
 *.old
-
-# ========================
-# Temporary testing folders
-# ========================
 tmp/
 test_output/
-captures/
