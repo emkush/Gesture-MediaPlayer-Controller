@@ -3,7 +3,7 @@
 <h1 align="center">🎯 Gesture Recognition & Control</h1>
 <p align="center">
   <b>CMPT 310 · Fall 2025 · SFU</b><br>
-  <i>Hybrid AI system that blends computer vision + temporal motion for intuitive human–computer interaction.</i>
+  <i>Hybrid AI system that blends motion detection and gesture recognition for video players.</i>
 </p>
 
 ---
@@ -36,7 +36,7 @@ It’s designed for **real-time media control**, **ASL integration**, and **cust
 Gesture_Project/
 ├── config/
 │   └── .......          # Map HaGRID → custom labels
-├── data/
+├── set_data/
 │   ├── .../                    # Raw dataset or captured images
 │   ├── .../              # After label remap
 │   └── .../                 # train/val/test
