@@ -1,0 +1,109 @@
+# ========================
+# Python and virtual envs
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+*.tmp
+
+# Virtual environment
+.venv/
+.venv310/
+env/
+venv/
+ENV/
+*.env
+*.venv
+
+# Jupyter / Colab notebooks
+.ipynb_checkpoints/
+*.ipynb_save
+*.ipynb_checkpoint
+
+# ========================
+# Model files and checkpoints
+# ========================
+models/
+*.h5
+*.tflite
+*.task
+*.pb
+*.ckpt
+*.onnx
+*.weights
+checkpoints/
+
+# ========================
+# Data
+# ========================
+data/
+datasets/
+*.csv
+*.npy
+*.npz
+*.zip
+*.tar
+*.tar.gz
+*.mp4
+*.mov
+*.avi
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.orig
+
+# ========================
+# MacOS / System
+# ========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# ========================
+# Cache / build artifacts
+# ========================
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+*.so
+__pycache__/
+*.cache
+.cache/
+*.pytest_cache/
+pytest_cache/
+
+# ========================
+# Other generated files
+# ========================
+*.out
+*.log
+*.json
+*.yaml~
+*.bak
+*.old
+
+# ========================
+# Temporary testing folders
+# ========================
+tmp/
+test_output/
+captures/
