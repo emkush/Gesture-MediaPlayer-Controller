@@ -1,7 +1,4 @@
 <!-- Header Banner -->
-<h1 align="center">🤖 Gesture Recognition & Control</h1>
-<p align="center">CMPT 310 · Fall 2025 · MediaPipe + TensorFlow Hybrid System</p>
-
 
 <h1 align="center">🎯 Gesture Recognition & Control</h1>
 <p align="center">
