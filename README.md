@@ -8,7 +8,7 @@
 
 ---
 
-## 🌟 Overview
+##  Overview
 
 This project is a **hybrid hand gesture recognition system** that merges:
 - 🤚 **Static gestures** (Play, Pause, Stop) recognized via **MediaPipe Model Maker**, and  
@@ -18,9 +18,9 @@ It’s designed for **real-time media control**, **ASL integration**, and **cust
 
 ---
 
-## ✨ Features
+##  Features
 
-| 🎨 Type | 🧠 Example | ⚙️ Description |
+|  Type | Example |  Description |
 |----------|-------------|----------------|
 | 🖐 **Static Gestures** | 👍 Play · ✋ Pause · 👊 Stop | Trained using **MediaPipe Model Maker** (`.task` model). |
 | 👋 **Dynamic Gestures** | Wave Left → ⏮️ Previous · Wave Right → ⏭️ Next | Real-time **motion tracking** of wrist x-direction. |
