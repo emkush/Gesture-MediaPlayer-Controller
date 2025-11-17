@@ -19,6 +19,12 @@ from mediapipe import Image, ImageFormat
 GESTURE_MODEL = "/Users/kush/Documents/SFU_CMPT/FALL2025/Gesture_Project/cmpt310/cmpt310.git/cmpt310/models/gesture_recognizer.task"
 
 # Path to MediaPipe’s hand landmark model
+"""
+The official MediaPipe hand_landmarker.task file can be downloaded from the MediaPipe models repository.
+The specific path to the model is:
+https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task
+
+"""
 HAND_MODEL = "/Users/kush/Documents/SFU_CMPT/FALL2025/Gesture_Project/cmpt310/cmpt310.git/cmpt310/models/hand_landmarker.task"
 
 # Used to send keyboard shortcuts to the computer
