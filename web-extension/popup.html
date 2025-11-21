@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Media Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Gesture Media Controller</h1>
+        <p>Control media with hand gestures</p>
+    </div>
+    
+    <div class="status-card">
+        <div class="status">
+            <span>Gesture Detection</span>
+            <div class="status-indicator" id="statusIndicator"></div>
+        </div>
+        
+        <div class="website-status">
+            <span>Current site:</span>
+            <span id="siteStatus">Unknown</span>
+        </div>
+        
+        <div class="controls">
+            <button class="btn primary" id="startBtn">Start Detection</button>
+            <button class="btn secondary" id="stopBtn">Stop Detection</button>
+        </div>
+    </div>
+    
+    <div class="gestures-info">
+        <h3 style="margin-top: 0; font-size: 16px;">Available Gestures</h3>
+        <div class="gesture-item">
+            <span class="gesture-emoji">🖐️</span>
+            <span>Palm → Play/Pause</span>
+        </div>
+        <div class="gesture-item">
+            <span class="gesture-emoji">👍</span>
+            <span>Thumbs Up/Point Up → Volume Up</span>
+        </div>
+        <div class="gesture-item">
+            <span class="gesture-emoji">👎</span>
+            <span>Thumbs Down/Point Down → Volume Down</span>
+        </div>
+        <div class="gesture-item">
+            <span class="gesture-emoji">✊</span>
+            <span>Close Fist → Mute/Unmute</span>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Works on YouTube & Netflix</p>
+        <p>Make sure Python script is running</p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

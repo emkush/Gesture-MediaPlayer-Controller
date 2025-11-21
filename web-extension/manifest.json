@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Gestured-Controlled Media Player",
+    "version": "1.0",
+    "description": "Map gestures to media control.",
+    "permissions": [
+        "activeTab", 
+        "scripting",
+        "tabs",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://www.youtube.com/*",
+        "https://www.netflix.com/*",
+        "http://localhost:8081/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/*",
+                "https://www.netflix.com/*"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "commands": {
+        "volume-up": {
+            "suggested_key": "Ctrl+Shift+Up",
+            "description": "Volume up"
+        },
+        "volume-down": {
+            "suggested_key": "Ctrl+Shift+Down",
+            "description": "Volume down"
+        }
+    }
+}
