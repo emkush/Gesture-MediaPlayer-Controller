@@ -1,0 +1,9 @@
+Class,Precision,Recall,F1 Score
+palm_pause_play,0.9126,0.6812,0.7801
+fist_mute,0.9028,0.9848,0.942
+thumbs_down_dislike,0.8721,0.9494,0.9091
+fingers_up_volume_up,0.968,0.9603,0.9641
+fingers_down_volume_down,0.981,0.9226,0.9509
+none,0.9603,0.8705,0.9132
+thumbs_up_like,0.7679,1.0,0.8687
+Overall Accuracy,0.9037,,
