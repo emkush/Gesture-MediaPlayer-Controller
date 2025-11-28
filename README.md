@@ -1,53 +1,48 @@
-<!-- Header Banner -->
+# Gesture Recognition & Control
+**CMPT 310 - Fall 2025 - Simon Fraser University**
 
-<h1 align="center">🎯 Gesture Recognition & Control</h1>
-<p align="center">
-  <b>CMPT 310 · Fall 2025 · SFU</b><br>
-  <i>Hybrid AI system that blends motion detection and gesture recognition for video players.</i>
-</p>
+A hybrid AI system that blends motion detection and gesture recognition for touch-free video player control.
 
 ---
 
-##  Overview
-### Demo Video Link: https://drive.google.com/file/d/1pD-rEtYHZJViCPVyhJh_qDc6BmKe7lJT/view?usp=sharing
-This project is a **hybrid hand gesture recognition system** that merges:
-- 🤚 **Static gestures** (Play, Pause, Stop) recognized via **MediaPipe Model Maker**, and  
-- 👋 **Dynamic gestures** (Wave Left/Right, Double Swipe) detected using **motion tracking** of hand landmarks.  
-
-It’s designed for **real-time media control**, **ASL integration**, and **custom gesture interactions**.
+## Demo Video
+**Watch the system in action:**
+[https://drive.google.com/file/d/1pD-rEtYHZJViCPVyhJh_qDc6BmKe7lJT/view?usp=sharing](https://drive.google.com/file/d/1pD-rEtYHZJViCPVyhJh_qDc6BmKe7lJT/view?usp=sharing)
 
 ---
 
-##  Features
+## Overview
+This project is a **hybrid hand gesture recognition system** designed for real-time media control. It moves beyond simple classification by merging two distinct approaches:
 
-|  Type | Example |  Description |
-|----------|-------------|----------------|
-| 🖐 **Static Gestures** | 👍 Play · ✋ Pause · 👊 Stop | Trained using **MediaPipe Model Maker** (`.task` model). |
-| 👋 **Dynamic Gestures** | Wave Left → ⏮️ Previous · Wave Right → ⏭️ Next | Real-time **motion tracking** of wrist x-direction. |
-| 🔊 **Custom Gestures** | Swipe Up/Down for Volume · Double Swipe Left = Skip 30s | Hand motion logic or a small temporal **LSTM** model. |
-| 🤟 **ASL Mode (Optional)** | A, B, C... | Recognize ASL letters via **ASL Alphabet Dataset**. |
-| 🎥 **Live Camera Control** | Control videos / apps using gestures | Implemented with **OpenCV + MediaPipe Tasks**. |
+1. **Static Gesture Recognition:** Uses a custom-trained **MediaPipe Model Maker** (`.task` model) to identify fixed hand shapes (e.g., Thumbs Up, Fist).
+2. **Dynamic Logic:** Uses temporal smoothing and logic buffers to stabilize inputs and prevent "flickering," ensuring that a gesture is only triggered when it is intentional.
+
+The architecture is built on a modular **Model-View-Controller (MVC)** pattern, separating hardware abstraction, AI processing, and action execution.
 
 ---
 
-## 🧱 Project Structure
+## Features
 
-```bash
+| Type | Examples | Description |
+| :--- | :--- | :--- |
+| **Static Gestures** | Play, Pause, Volume Control | Trained specific hand shapes recognized via the `.task` model. Includes confidence thresholding (>60%). |
+| **Dynamic Stabilization** | Debouncing / Smoothing | Implements logic to track gesture consistency over time (6 frames) to prevent accidental triggers. |
+| **Cross-Platform** | Camera Selection | Custom hardware manager that auto-detects inputs on macOS, Windows, and Linux. |
+| **Media Control** | System-Level Shortcuts | Controls global system volume and media playback via keyboard simulation. |
+
+---
+
+## Project Structure
+
+```text
 Gesture_Project/
-├── config/
-│   └── .......                 # Map HaGRID → custom labels
-├── set_data/
-│   ├── .../                    # Raw dataset or captured images
-│   ├── .../                    # After label remap
-│   └── .../                    # train/val/test
-├── models/                     
-│   └── ...
-├── scripts/
-│   ├── ....py                  # trainers
-│   ├── ....py
-│   ├── ....py
-│   ├── ....py     
-│   └── ....py
-├── .gitignore
-├── Makefile
-└── README.md
+├── models/
+│   ├── gesture_recognizer.task   # Custom trained classification model
+│   ├── hand_landmarker.task      # Standard MediaPipe landmark detection
+│   └── Main/
+│       ├── main.py               # Application Entry Point (View)
+│       ├── camera_manager.py     # Hardware Abstraction Layer
+│       ├── gesture_engine.py     # AI Processing & Smoothing Logic (Model)
+│       └── action_controller.py  # Keyboard/Action Execution (Controller)
+├── requirements.txt              # Dependency list
+└── README.md                     # Documentation
