@@ -7,12 +7,62 @@ Each gesture triggers a keyboard shortcut, like play/pause or volume control.
 I also added gesture smoothing and on-screen labels to make the system usable.
 """
 
+# OLD CODE 
+
 import cv2
 import time
+import subprocess
+import re
 from pynput.keyboard import Controller, Key
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from mediapipe import Image, ImageFormat
+
+
+
+# New helper: detect iPhone camera *non-destructively*
+
+def find_iphone_camera_index():
+    """
+    Uses ffmpeg to list AVFoundation devices on macOS.
+    If an iPhone camera is available, returns its index.
+    Otherwise returns None.
+    """
+    try:
+        output = subprocess.run(
+            ["ffmpeg", "-f", "avfoundation", "-list_devices", "true", "-i", ""],
+            stderr=subprocess.PIPE,
+            text=True
+        ).stderr
+
+        matches = re.findall(r"\[(\d+)\].*iPhone", output)
+        return int(matches[0]) if matches else None
+
+    except Exception as e:
+        print("Error during iPhone detection:", e)
+        return None
+
+
+# New camera-selection block that does NOT break Continuity Camera
+
+# Step 1: try the default camera (index 0). If QuickTime has activated the iPhone,
+# index 0 will already be the iPhone. This avoids killing the session.
+test_cam = cv2.VideoCapture(0)
+if test_cam.isOpened():
+    print("Using default camera (if QuickTime selected iPhone, this IS the iPhone).")
+    CAMERA_INDEX = 0
+    test_cam.release()
+else:
+    test_cam.release()
+    print("Default camera unavailable. Checking for iPhone…")
+    iphone_index = find_iphone_camera_index()
+    if iphone_index is not None:
+        print(f"Using iPhone camera index {iphone_index}")
+        CAMERA_INDEX = iphone_index
+    else:
+        print("iPhone not found. Falling back to webcam (index 0).")
+        CAMERA_INDEX = 0
+
 
 
 # Path to my custom gesture-recognizer model
@@ -23,7 +73,6 @@ GESTURE_MODEL = "/Users/kush/Documents/SFU_CMPT/FALL2025/Gesture_Project/cmpt310
 The official MediaPipe hand_landmarker.task file can be downloaded from the MediaPipe models repository.
 The specific path to the model is:
 https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task
-
 """
 HAND_MODEL = "/Users/kush/Documents/SFU_CMPT/FALL2025/Gesture_Project/cmpt310/cmpt310.git/cmpt310/models/hand_landmarker.task"
 
@@ -42,13 +91,13 @@ MEDIA_CONTROLS = {
 
 # Colors used to draw gesture labels on the screen
 GESTURE_COLORS = {
-    "thumbs_up":  (0, 255, 0),
-    "fist":       (0, 0, 255),
-    "victory":    (255, 0, 0),
+    "thumbs_up": (0, 255, 0),
+    "fist": (0, 0, 255),
+    "victory": (255, 0, 0),
     "swipe_left": (0, 128, 255),
     "swipe_right":(0, 128, 255),
-    "open_palm":  (200, 200, 200),
-    "none":       (100, 100, 100)
+    "open_palm": (200, 200, 200),
+    "none": (100, 100, 100)
 }
 
 # These variables help me stabilize the gesture prediction
@@ -93,7 +142,7 @@ def trigger_media_action(action):
 
 
 # Start reading the webcam feed
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(CAMERA_INDEX)
 prev_time = time.time()
 
 print("Running… press 'q' to quit")
@@ -122,7 +171,7 @@ while True:
 
         x1, y1, x2, y2 = min(xs), min(ys), max(xs), max(ys)
 
-        # Draw the bounding box around the hand
+        # Draw the bounding box around the hand  ← FIXED HERE
         cv2.rectangle(frame, (x1 - 20, y1 - 20), (x2 + 20, y2 + 20), (0, 255, 0), 2)
 
         # Draw each landmark point
@@ -183,7 +232,7 @@ while True:
                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 200, 0), 2)
 
     # Show everything in a window
-    cv2.imshow("Gesture Control – Enhanced", frame)
+    cv2.imshow("Gesture Media Player – Project", frame)
 
     # Press 'q' to quit manually
     if cv2.waitKey(1) & 0xFF == ord('q'):
