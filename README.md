@@ -68,17 +68,36 @@ cd models/Main
 python main.py
 ```
 Follow the on-screen prompts to select your camera input.
-Note: Ensure your file paths in the code point correctly to the .task models (e.g., ../gesture_recognizer.task) since the scripts are inside a subfolder.
-Controls Reference
+
+
+> ** Note:** Ensure your file paths in the code point correctly to the `.task` models (e.g., `../gesture_recognizer.task`) since the scripts are inside a subfolder.
+
+---
+
+## Controls Reference
+
 The system maps the following gestures to system actions:
-GestureActionKey MappingThumbs UpPlay / PauseSpacebarFistVolume DownMedia Volume DownVictory (V)Volume UpMedia Volume UpSwipe LeftRewindLeft Arrow KeySwipe RightForwardRight Arrow KeyOpen PalmExit ApplicationTerminates Program.
 
-Troubleshooting 
+| Gesture | Action | Key Mapping |
+| :--- | :--- | :--- |
+| **Thumbs Up** | Play / Pause | Spacebar |
+| **Fist** | Volume Down | Media Volume Down |
+| **Victory (V)** | Volume Up | Media Volume Up |
+| **Swipe Left** | Rewind | ... |
+| **Swipe Right** | Forward | ... |
+| **Open Palm** | ... |  ... |
 
-Camera Selection Issues
-If the camera list does not display names correctly, or if the selected index fails, try selecting index 0 or 1 manually. 
-  The camera_manager.py includes specific fallback logic for macOS permissions.
-2. "Ghost" Inputs: 
-    If volume changes uncontrollably, increase the CONFIRMATION_FRAMES or MIN_CONFIDENCE variables in gesture_engine.py to require stricter gesture adherence.
-3. Permissions (macOS) To control the keyboard, the terminal (VS Code, Terminal.app, or iTerm) must be granted Accessibility permissions:
-System Settings > Privacy & Security > Accessibility.
+---
+
+## Troubleshooting
+
+### 1. Camera Selection Issues
+If the camera list does not display names correctly, or if the selected index fails, try selecting index **0** or **1** manually. The `camera_manager.py` includes specific fallback logic for macOS permissions.
+
+### 2. "Ghost" Inputs
+If volume changes uncontrollably, increase the `CONFIRMATION_FRAMES` or `MIN_CONFIDENCE` variables in `gesture_engine.py` to require stricter gesture adherence.
+
+### 3. Permissions (macOS)
+To control the keyboard, the terminal (VS Code, Terminal.app, or iTerm) must be granted **Accessibility** permissions:
+* Go to: **System Settings > Privacy & Security > Accessibility**
+* Ensure your terminal application is checked.
