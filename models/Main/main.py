@@ -6,6 +6,20 @@ import sys
 from camera_manager import CameraManager
 from gesture_engine import GestureEngine
 from controller import ActionController
+# TO BE FILLED FOR DYNAMIC 
+
+
+"""
+Gesture-Based Media Controller
+
+This is the main entry point for the modular gesture recognition system.
+It serves as the coordinator between the hardware, AI, and execution layers:
+
+1. CameraManager: Selects the correct video input on any OS.
+2. GestureEngine: Processes static hand shapes (Fist, Palm) with smoothing.
+3. DynamicGestureProcessor: Analyzes motion history for dynamic waves/swipes.
+4. ActionController: Triggers the corresponding keyboard shortcuts.
+"""
 
 #  SETTINGS
 # Make sure these paths are correct!
@@ -21,12 +35,12 @@ def main():
     3. Loop: Capture -> Process -> Action -> Draw
     """
 
-    # --- STEP 1: SETUP CAMERA ---
+    #  STEP 1: SETUP CAMERA 
     print("Initializing Camera Manager...")
     cam_manager = CameraManager()
     selected_camera_index = cam_manager.select_camera()
 
-    # --- STEP 2: LOAD AI ENGINE ---
+    #  STEP 2: LOAD AI ENGINE 
     print("Loading AI Models... (This might take a second)")
     try:
         engine = GestureEngine(GESTURE_MODEL_PATH, HAND_MODEL_PATH)
