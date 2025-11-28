@@ -61,7 +61,7 @@ Install the required Python libraries:
 pip install opencv-python mediapipe pynput
 (Optional for Windows users to see device names):Bashpip install pygrabber
 ```
-3. How to Run 
+### 3. How to Run 
 Navigate to the source folder and execute the main script: 
 ```bash
 cd models/Main
