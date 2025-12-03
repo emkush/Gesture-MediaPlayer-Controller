@@ -112,10 +112,10 @@ The system maps the following gestures to system actions:
 | Gesture | Action |  Mapping |
 | :--- | :--- | :--- |
 | **Thumbs Up** |  like  | Media Like |
-| **Thumbs Down ** |  dislike  | Media dislike |
+| **Thumbs Down** |  dislike  | Media dislike |
 | **Fist** | Mute  | Media Mute |
-| **Victory (fingers_up) ** | Volume Up | Media Volume Up |
-| **Victory (fingers_up) ** | Volume down | Media Volume down |
+| **Victory (fingers_up)** | Volume Up | Media Volume Up |
+| **Victory (fingers_up)** | Volume down | Media Volume down |
 | **Open Palm** | pause/play | spacebar |
 
 ---
