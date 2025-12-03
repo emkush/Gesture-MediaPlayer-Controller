@@ -74,6 +74,37 @@ Follow the on-screen prompts to select your camera input.
 
 ---
 
+## Instructions
+### **Step 1: Install Extension**
+   ```
+   1. Open Chrome → chrome://extensions/
+   2. Enable "Developer mode" (top right toggle)
+   3. Click "Load unpacked"
+   4. Select the web extension folder
+   ```
+
+### **Step 2: Verify Installation**
+   - Look for "Gestured-Controlled Media Player" in extensions list
+   - Should have a 🎬 icon in toolbar
+
+### **Step 3: Start the Backend**
+```bash
+./start.sh                    # Automatic (camera required)
+```
+
+### **Step 4: Prepare Browser**
+1. Open YouTube: https://youtube.com/watch?v=dQw4w9WgXcQ
+2. Or Netflix: https://netflix.com (any video)
+
+### **Step 5: Activate Extension**
+1. Click the 🎬 extension icon in Chrome toolbar
+2. Click "Start Detection" button
+3. Status indicator should turn green
+
+### **Step 6: Use Gestures**
+- **With Camera:** Show palm to webcam → pause/play
+- **Demo Mode:** Automatic gestures every 5 seconds
+
 ## Controls Reference
 
 The system maps the following gestures to system actions:
