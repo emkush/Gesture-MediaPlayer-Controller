@@ -83,9 +83,9 @@ The system maps the following gestures to system actions:
 | **Thumbs Up** | Play / Pause | Spacebar |
 | **Fist** | Volume Down | Media Volume Down |
 | **Victory (V)** | Volume Up | Media Volume Up |
-| **Swipe Left** | Rewind | ... |
-| **Swipe Right** | Forward | ... |
-| **Open Palm** | ... |  ... |
+| **Swipe Left** | Rewind | 30 sec rewind |
+| **Swipe Right** | Forward | 30sec fast forward |
+| **Open Palm** | pause | spacebar |
 
 ---
 
