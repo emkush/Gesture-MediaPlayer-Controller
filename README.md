@@ -51,7 +51,7 @@ Gesture_Project/
 ## Installation & Setup
 
 ### 1. Prerequisites
-* Python 3.9 or higher
+* Python version between 3.9 and 3.11
 * Webcam (Built-in or USB (Bluetooth)
 
 ### 2. Dependencies
