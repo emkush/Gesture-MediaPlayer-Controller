@@ -109,14 +109,14 @@ Follow the on-screen prompts to select your camera input.
 
 The system maps the following gestures to system actions:
 
-| Gesture | Action | Key Mapping |
+| Gesture | Action |  Mapping |
 | :--- | :--- | :--- |
-| **Thumbs Up** | Play / Pause | Spacebar |
-| **Fist** | Volume Down | Media Volume Down |
-| **Victory (V)** | Volume Up | Media Volume Up |
-| **Swipe Left** | Rewind | 30 sec rewind |
-| **Swipe Right** | Forward | 30sec fast forward |
-| **Open Palm** | pause | spacebar |
+| **Thumbs Up** |  like  |  |
+| **Thumbs Down ** |  dislike  |  |
+| **Fist** | Mute  | Mute |
+| **Victory (fingers_up) ** | Volume Up | Media Volume Up |
+| **Victory (fingers_up) ** | Volume down | Media Volume down |
+| **Open Palm** | pause/play | spacebar |
 
 ---
 
